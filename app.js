@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to bogo node application." });
 });
+require("./routes/tutorial.routes.js")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
