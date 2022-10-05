@@ -13,8 +13,12 @@ app.use(cors(corsOptions));
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
+const db = require("./models");
+db.sequelize.sync();
+
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // simple route
 app.get("/", (req, res) => {
